@@ -1,0 +1,55 @@
+/* main_css.css */
+
+/* Устанавливаем фон для всего документа */
+body {
+    background-image: url('C:/Users/kredg/Desktop/Site/main_img/backgroung.jpg');
+    background-size: cover; /* Заполнение всего экрана */
+    background-position: center center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Отключить повторение */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Высота на весь экран */
+}
+
+/* Стили для заголовков */
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    color: darkblue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Стили для ссылок */
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Навигация */
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+}
