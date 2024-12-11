@@ -1,55 +1,76 @@
-/* main_css.css */
-
-/* Устанавливаем фон для всего документа */
+/* Общие стили для всей страницы */
 body {
-    background-image: url('C:/Users/kredg/Desktop/Site/main_img/backgroung.jpg');
-    background-size: cover; /* Заполнение всего экрана */
-    background-position: center center; /* Центрирование изображения */
-    background-repeat: no-repeat; /* Отключить повторение */
     margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh; /* Высота на весь экран */
+    font-family: Arial, sans-serif; /* Шрифт для текста */
+    background: url('../main_img/backgroung.jpg'); /* Фон страницы */
+    background-size: cover; /* Растягиваем изображение, чтобы оно полностью заполнило экран */
+    background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался при скролле */
+    background-position: center center; /* Центрируем изображение */
+
+}
+/*ПАНЕЛЬ В ВЕРХУ ЭКРАНА*/
+
+ /* Панель вверху страницы */
+.top-panel {
+    background-color: #4b2c2e; 
+    color: black; /*текст цвет */
+    text-align: center; /* Центрируем текст */
+    padding: 30px 0; 
+    font-size: 20px; 
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2); 
+    border-radius: 1px; /*  округленные углы */
+    transform: translateY(-10px); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
 
-/* Стили для заголовков */
-h1 {
+/* Эффект на наведение */
+.top-panel:hover {
+    transform: translateY(-15px); /* Усиливаем подъём панели при наведении */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4), 0 8px 25px rgba(0, 0, 0, 0.3); /* Настроенная тень */
+}
+
+
+
+
+.cent-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ширина контейнера */
+    height: 50%; /* Высота контейнера */
+    max-width: 1200px; /* Максимальная ширина */
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex; /* Для расположения элементов по горизонтали */
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    align-items: flex-start; /* Кнопки будут в верхней части контейнера */
+}
+
+.button-centr-panel {
+    display: flex; /* Горизонтальное размещение кнопок */
+    gap: 10px; /* Расстояние между кнопками */
+    width: 100%; 
+}
+
+button {
+    height: 30px; /* Высота кнопки */
+    width: 20%; /* Ширина кнопок в процентах, чтобы они заполнили контейнер */
+    background-color: #744445; /* Зеленый цвет */
     color: white;
-    text-align: center;
-    margin-top: 50px;
+    border: none;
+    border-radius: 5px; /* Закругленные углы */
+    font-size: 16px;
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
 }
 
-h2 {
-    color: darkblue;
-    text-align: center;
-    margin-top: 20px;
+button:hover {
+    background-color: #45a049; /* Цвет кнопки при наведении */
 }
 
-/* Стили для ссылок */
-a {
-    color: red;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Навигация */
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-footer {
-    text-align: center;
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    font-size: 14px;
-    color: white;
+button:focus {
+    outline: none; /* Убираем обводку при фокусе */
 }
