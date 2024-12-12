@@ -1,96 +1,139 @@
 /* Общие стили для всей страницы */
 body {
     margin: 0;
-    font-family: Arial, sans-serif; /* Шрифт для текста */
-    /*background: url('../main_img/backgroung.jpg'); /* Фон страницы */
+    font-family: Arial, sans-serif;
     background-color: #201c21;
-    /*background-size: cover; /* Растягиваем изображение, чтобы оно полностью заполнило экран */
-    /*background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался при скролле */
-    /*background-position: center center; /* Центрируем изображение */
 
+
+
+    /*background-image: url('your-image-url.jpg'); /* Укажите путь к изображению */
+    /*background-size: cover; /* Растягиваем фон на весь экран */
+    /*background-position: center; /* Выравниваем фон по центру */
+    /*button-centr-panel: no-repeat; /* Не повторяем изображение */
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Устанавливаем минимальную высоту для body */
+    height: 100vh; /* Устанавливаем высоту body в 100% от высоты экрана */
 }
-/*ПАНЕЛЬ В ВЕРХУ ЭКРАНА*/
 
- /* Панель вверху страницы */
+
+
+/* Панель в верхней части страницы */
 .top-panel {
-    background-color: #4b2c2e; 
-    color: #ead9ce; /*текст цвет */
-    text-align: center; /* Центрируем текст */
-    padding: 30px 0; 
-    font-size: 20px; 
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2); 
-    border-radius: 1px; /*  округленные углы */
-    transform: translateY(-10px); 
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    background-color: #4b2c2e;
+    color: #ead9ce;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 18px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: -100px; /* Исходная позиция за пределами экрана */
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 3px solid #3a2022;
+    transition: top 0.5s ease-in-out; /* Добавляем плавность движения */
 }
 
-/* Эффект на наведение */
+/* Появление верхней панели */
+body.show-panel .top-panel {
+    top: 0; /* Панель плавно возвращается на своё место */
+}
+.top-panel {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавность для фона и масштабирования */
+}
+
 .top-panel:hover {
-    transform: translateY(-15px); /* Усиливаем подъём панели при наведении */
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4), 0 8px 25px rgba(0, 0, 0, 0.3); /* Настроенная тень */
+    background-color: #3a2022; /* Темнее при наведении */
+    transform: scale(1.02); /* Лёгкое увеличение */
 }
 
 
-
-
+/* Центральный блок */
 .cent-panel {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Ширина контейнера */
-    height: 50%; /* Высота контейнера */
-    max-width: 1200px; /* Максимальная ширина */
-    padding: 10px;
-    background-color: white;
+    position: relative;
+    width: 80%;
+    height: 60%; /* Теперь работает, потому что родительский элемент имеет height: 100vh */
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #f2ddd7;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex; /* Для расположения элементов по горизонтали */
-    justify-content: center; /* Центрируем кнопки по горизонтали */
-    align-items: flex-start; /* Кнопки будут в верхней части контейнера */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 20px 50px rgba(0, 0, 0, 0.2); /* 3D тени для объема */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
+
+/* Горизонтальная кнопочная панель */
+/* Горизонтальная кнопочная панель */
+/* Горизонтальная кнопочная панель */
 .button-centr-panel {
-    display: flex; /* Горизонтальное размещение кнопок */
-    gap: 10px; /* Расстояние между кнопками */
-    width: 100%; 
+    display: flex;
+    gap: 2px;
+    width: 100%;
+    justify-content: space-around;
 }
 
 button {
-    height: 30px; /* Высота кнопки */
-    width: 20%; /* Ширина кнопок в процентах, чтобы они заполнили контейнер */
-    background-color: #744445; /* Зеленый цвет */
+    height: 40px;
+    width: 40%; /* Устанавливаем ширину 40% */
+    background-color: #744445;
     color: #ead9ce;
-    border: none;
-    border-radius: 5px; /* Закругленные углы */
+
+    border: 5px solid #6b3f40; 
+    
+   
+    border-radius: 5px;
     font-size: 16px;
-    cursor: pointer; /* Курсор при наведении */
-    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+    cursor: pointer;
+    flex-grow: 1; /* Делаем кнопки гибкими */
+    flex-basis: 0; /* Убираем начальную ширину */
+    max-width: none; /* Убираем ограничение по максимальной ширине */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Добавляем 3D тени */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.2), 0 15px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Эффект при наведении */
 button:hover {
+    background-color: #4b2c2e;
+    border: 5px solid #4b2c2e;
     color: #ce836e;
-    background-color: #4b2c2e; /* Цвет кнопки при наведении */
+    transform: translateY(-5px) scale(1.05); /* Легкое поднятие и увеличение */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 15px 30px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.4); /* Усиление тени */
 }
 
 button:focus {
-    outline: none; /* Убираем обводку при фокусе */
+    outline: none;
 }
 
 
 
 
 
+/* Слайдер */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    border: 5px solid #744445; /* Цвет рамки, такой же, как и цвет кнопок */
+    border-radius: 10px;
+    background-color: #fff;
+}
 
 
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-
-
-
-
-
-
-
-
-
-
+.slide {
+    min-width: 100%;
+    user-select: none;
+}
