@@ -12,3 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(showNextImage, 7000); // Меняем изображение каждые 7 секунд
 });
+
+
+
+
+
+
+
+
+
+

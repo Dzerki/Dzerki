@@ -2,10 +2,11 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif; /* Шрифт для текста */
-    background: url('../main_img/backgroung.jpg'); /* Фон страницы */
-    background-size: cover; /* Растягиваем изображение, чтобы оно полностью заполнило экран */
-    background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался при скролле */
-    background-position: center center; /* Центрируем изображение */
+    /*background: url('../main_img/backgroung.jpg'); /* Фон страницы */
+    background-color: #201c21;
+    /*background-size: cover; /* Растягиваем изображение, чтобы оно полностью заполнило экран */
+    /*background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался при скролле */
+    /*background-position: center center; /* Центрируем изображение */
 
 }
 /*ПАНЕЛЬ В ВЕРХУ ЭКРАНА*/
@@ -13,7 +14,7 @@ body {
  /* Панель вверху страницы */
 .top-panel {
     background-color: #4b2c2e; 
-    color: black; /*текст цвет */
+    color: #ead9ce; /*текст цвет */
     text-align: center; /* Центрируем текст */
     padding: 30px 0; 
     font-size: 20px; 
@@ -59,7 +60,7 @@ button {
     height: 30px; /* Высота кнопки */
     width: 20%; /* Ширина кнопок в процентах, чтобы они заполнили контейнер */
     background-color: #744445; /* Зеленый цвет */
-    color: white;
+    color: #ead9ce;
     border: none;
     border-radius: 5px; /* Закругленные углы */
     font-size: 16px;
@@ -68,9 +69,28 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* Цвет кнопки при наведении */
+    color: #ce836e;
+    background-color: #4b2c2e; /* Цвет кнопки при наведении */
 }
 
 button:focus {
     outline: none; /* Убираем обводку при фокусе */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
